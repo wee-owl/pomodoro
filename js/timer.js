@@ -1,12 +1,15 @@
 import { alarm } from "./alarm.js";
+import { changeActiveBtn } from "./control.js";
 import { state } from "./state.js";
 
 const minutesElem = document.querySelector('.time__minutes');
 const secondsElem = document.querySelector('.time__seconds');
 
-const showTime = (seconds) => {
-  minutesElem.textContent = String(Math.floor(seconds / 60)).length > 1 ? Math.floor(seconds / 60) : '0' + Math.floor(seconds / 60);
-  secondsElem.textContent = String(seconds % 60).length > 1 ? seconds % 60 : '0' + seconds % 60;
+const addZero = (n) => n < 10 ? '0' + n : n;
+
+export const showTime = (seconds) => {
+  minutesElem.textContent = addZero(Math.floor(seconds / 60));
+  secondsElem.textContent = addZero(seconds % 60);
 }
 
 export const startTimer = () => {
@@ -19,7 +22,24 @@ export const startTimer = () => {
   }
 
   if (state.timeLeft <= 0) {
+
+    if (state.status === 'work') {
+      state.activeToDo.pomodoro += 1;
+
+      if (state.activeToDo.pomodoro % state.count !== 0) {
+        state.status = 'break';
+      } else {
+        state.status = 'relax';
+      }
+
+    } else {
+      state.status = 'work';
+    }
+
     alarm();
+    state.timeLeft = state[state.status] * 60;
+    changeActiveBtn(state.status);
+    startTimer();
   }
 }
 
