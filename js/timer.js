@@ -13,7 +13,7 @@ export const showTime = (seconds) => {
 }
 
 export const startTimer = () => {
-  state.timeLeft -= 1;
+  state.timeLeft -= 10;
 
   showTime(state.timeLeft);
 
@@ -42,4 +42,3 @@ export const startTimer = () => {
     startTimer();
   }
 }
-

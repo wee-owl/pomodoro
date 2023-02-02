@@ -12,4 +12,3 @@ export const state = {
   isActive: false,
   timerId: 0,
 }
-
