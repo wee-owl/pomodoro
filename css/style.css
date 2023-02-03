@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 1500px;
   min-height: 100vh;
   font-family: Lobster, sans-serif;
   background-color: #FFF8EE;
@@ -70,17 +70,17 @@ iframe {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 0 10px;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: repeat(3, 500px);
   align-items: center;
 }
 
 .timer {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .header {
@@ -135,7 +135,7 @@ iframe {
 
 .title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-size: 20px;
 }
 
@@ -169,11 +169,14 @@ iframe {
 }
 
 .todo__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding-left: 24px;
 }
 
 .todo__item {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .todo__item-wrapper {
@@ -198,7 +201,8 @@ iframe {
 }
 
 .todo__btn:hover {
-  color: #f53f3f;
+  color: #c44747;
+  text-decoration: underline;
 }
 
 .todo__edit {
@@ -212,10 +216,12 @@ iframe {
   background-repeat: no-repeat;
   opacity: 0.7;
   margin-right: 4px;
+  transition: all 0.3s ease-in-out;
 }
 
 .todo__edit:hover {
   opacity: 1;
+  transform: scale(1.2);
 }
 
 .todo__del {
@@ -228,10 +234,12 @@ iframe {
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.7;
+  transition: all 0.3s ease-in-out;
 }
 
 .todo__del:hover {
   opacity: 1;
+  transform: scale(1.2);
 }
 
 .todo__add {
