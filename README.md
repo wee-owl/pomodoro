@@ -1,7 +1,18 @@
-## Project: ["Pomodoro"](https://wee-owl.github.io/pomodoro/)  
+# [Pomodoro](https://wee-owl.github.io/pomodoro/)  
 
-### Description:  
-The project was created as part of an intensive course conducted by the [Methed](https://methed.ru/) online school.  
-Pomodoro mini-app for time management and task scheduling.  
+Pomodoro - это задание [Methed online school](https://methed.ru/) по разработке сервиса с техникой `Pomodoro` в тайм-менеджменте. Позволяет добавить список задач и установить таймер на 25 минут работы и 5 минут промежуточного отдыха. После 60 минут работы таймер включается на 20 минут отдыха.  
 
-![cover](https://user-images.githubusercontent.com/95621680/216570564-2bb67bff-14ee-41c8-997b-57d8fe1682d5.png)
+<img src="https://github.com/wee-owl/pomodoro/assets/95621680/b69e1dde-0f30-42dc-bb65-5e4ba14cd99d" width="500" height="">  
+
+## Технологии  
+- JavaScript
+- HTML
+- CSS
+
+## Реализованная функциональность
+- добавление, редактирование и удаление задач
+- установка таймера на 25, 5 и 20 минут
+- пауза и сброс таймера времени
+- звуковые уведомления по окончании времени каждого таймера
+- работа с `JSON`
+- работа с `localeStorage`
